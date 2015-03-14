@@ -27,15 +27,15 @@ include "header.php";
 	<form id = "register" method ="post">
 	  <div class="form-group">
 	    <label for="username">Username</label>
-	    <input type="text" class="form-control" id="username" placeholder="Enter username">
+	    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
 	  </div>
 	  <div class="form-group">
 	    <label for="password">Password</label>
-	    <input type="password" class="form-control" id="password" placeholder="Password">
+	    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 	  </div>
 	  <div class="form-group">
 	    <label for="retype_password">Retype Password</label>
-	    <input type="password" class="form-control" id="retype_password" placeholder="Retype Password">
+	    <input type="password" class="form-control" id="retype_password" name ="retype_password" placeholder="Retype Password">
 	  </div>
 	  <button type="submit" class="btn btn-default">Submit</button>
 	</form>

@@ -1,35 +1,30 @@
 $( document ).ready(function() {
 
 
-$("#submit").submit(function(event) {
+$("#submit_meme").submit(function(event) {
 	$(".alert").remove();
 
 	var title = $("#title").val();
-	var url = $("#url").val();
+	var meme = $("#meme").val();
 
 	if (!title) {
 		addAlert("You need to include a title!");
 		event.preventDefault();
 	} 
 
-	if (!url) {
-		addAlert("You need to enter a URL!");
-		event.preventDefault();
-	}
-
-	var re = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi;
-
-	if (!re.test(url)) {
-		addAlert("That wasn't a valid URL!");
+	if (!meme) {
+		addAlert("You haven't selected a file!");
 		event.preventDefault();
 	}
 
 });
 
-function addAlert(message) {
-    $('#alertbox').append(
-        '<div class="alert alert-danger" role="alert">' + message + '</div>');
-}
+function addAlert(message, type) {
 
+   type = typeof type !== 'undefined' ? type : 'alert-danger';
+
+    $('#alertbox').append(
+        '<div class="alert ' + type + '" role="alert">' + message + '</div>');
+}
 
 });

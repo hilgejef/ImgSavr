@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 $("#register").submit(function(event) {
-	console.log("TEST");
+	event.preventDefault();
 
 	$(".alert").remove();
 
@@ -16,51 +16,56 @@ $("#register").submit(function(event) {
 
 	if (!password) {
 		addAlert("Password is a required field!");
-		event.preventDefault();
 	}
 
 	if (!retype_password) {
 		addAlert("You must reenter your password!");
-		event.preventDefault();
 	}
 
 	if (password.length < 7 && password.length > 0) {
 		addAlert("The password you entered is too short!");
-		event.preventDefault();
 	}
 
 	else if (password.length > 32) {
 		addAlert("The password you entered is too long!");
-		event.preventDefault();
 	}
 
 	if (username.length < 3 && username.length > 0) {
 		addAlert("The username you entered is too short!");
-		event.preventDefault();
 	}
 
 	else if (username.length > 20) {
 		addAlert("The username you entered is too long!");
-		event.preventDefault();
 	}
 
 	if (/[^A-Za-z0-9]/.test(username)) {
 		addAlert("Usernames are alphanumeric characters only!");
-		event.preventDefault();
 	}
 
 	if (password != retype_password) {
 		addAlert("Passwords didn't match!");
-		event.preventDefault();
 	}
 
 	$("#password").val("");
 	$("#retype_password").val("");
+
+	$.post("handle_register.php", $("#register").serialize(), function(data) {
+		console.log(data);
+		if (data === "username_exists") {
+			addAlert("That username already exists!")
+		}
+		else {
+			window.location.href = "login.php";
+		}
+	});
 });
 
-function addAlert(message) {
+function addAlert(message, type) {
+
+   type = typeof type !== 'undefined' ? type : 'alert-danger';
+
     $('#alertbox').append(
-        '<div class="alert alert-danger" role="alert">' + message + '</div>');
+        '<div class="alert ' + type + '" role="alert">' + message + '</div>');
 }
 
 });
