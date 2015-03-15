@@ -64,7 +64,8 @@ $(document).on("click", ".remove", function() {
 
 $(document).on("click", ".remove-insave", function() {
 	$.post("remove_save.php", {"location": $(this).attr("location")}, function(data) {});
-	$(this).parent().fadeOut("medium", function() {
+	$(this).parent().parent().fadeOut("medium", function() {
+		$(this).next("hr").remove();
 		$(this).remove();
 	});
 });
