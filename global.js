@@ -29,21 +29,22 @@ function makeImgDiv(obj, type) {
 }
 
 function imgDivHelper(obj, bclass, btext) {
+	var pre = $("<pre></pre>");
 	var img_div = $('<div></div>')
 							.attr({"class" : "img_div"})
 							.append(
 							$("<h3></h3>")
 								.text(obj.title), 
-							$("<h5></h5>")
-								.attr({"class" : "small"})
+							$("<h6></h6>")
 								.text("Submitted by " + obj.submitter),
 							$("<img></img>")
-								.attr({"src" : obj.location}),
+								.attr({"src" : obj.location,
+									   "class": "thumbnail"}),
 							$("<button></button>")
 								.attr({"class" : bclass,
 									  "type" : "button",
 									  "location" : obj.location})
 								.text(btext));
-
-	return img_div;
+	pre.append(img_div);
+	return pre;
 }

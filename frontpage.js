@@ -6,7 +6,10 @@ $.get("view_all.php", function(data) {
 	json.map(function (obj) {
 		var img_div = makeImgDiv(obj, obj["save_state"]);
 		$(".results-container").append(img_div);
+		$(".results-container").append($("<hr/>").attr("class", "soften"));
 	});
+
+	$("#titlediv").text("Viewing all memes")
 });
 
 $(document).on("click", "#viewall", function(event) {
@@ -21,6 +24,8 @@ $(document).on("click", "#viewall", function(event) {
 			var img_div = makeImgDiv(obj, obj["save_state"]);
 			$(".results-container").append(img_div);
 		});
+
+		$("#titlediv").text("Viewing all memes")
 	});
 });
 
@@ -36,6 +41,8 @@ $(document).on("click", "#viewsaved", function(event) {
 			var img_div = makeImgDiv(obj, "saved_insave");
 			$(".results-container").append(img_div);
 		});
+
+		$("#titlediv").text("Viewing saved memes")
 	});
 });
 

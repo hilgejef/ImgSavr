@@ -25,15 +25,23 @@ include "header.php";
 <?php 
 
 if (isset($_SESSION["username"])) {
-	echo "<a href='' id='viewsaved'>View Saved</a> / <a href='' id='viewall'>View All</a>";
+	echo "<a href='' id='viewsaved'>View Saved</a> / <a href='' id='viewall'>View All</a> 
+			/ <a href='submit.php'>Submit a meme!</a>";
 }
 
 else {
-	echo "<span class='text-muted'>View Saved / <a href='' id='viewall'>View All</a>";
+	echo "<span class='text-muted'>View Saved / <a href='' id='viewall'>View All</a> 
+			/ <a href='submit.php'>Submit a meme!</a>";
 }
 ?>
 	</div>
+
+	<h2 id ="titlediv" class ="text-primary"></h2>
+	<hr class="soften">
 </div>
+
+
+
 
 <div class="container results-container"></div>
 

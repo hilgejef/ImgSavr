@@ -33,7 +33,7 @@ include "header.php";
 	    <label for="meme">Meme to upload (PNG, JPG, JPEG or GIF only &lt; 5mb) </label>
 	    <input type="file" id="meme" name="meme">
 	  </div>
-	  <button type="submit" class="btn btn-default">Submit</button>
+	  <button type="submit" class="btn btn-default">Submit meme</button>
 	</form>
 
 	<div id="alertbox"></div>

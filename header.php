@@ -1,5 +1,7 @@
 <div class="container header-container">
-	<h1><a href="frontpage.php">Memesavr</a> <small>by Jeffrey Hilger</small></h1>
+	<div id="title_name">
+		<h1><a href="frontpage.php">Memesavr</a> <small>by Jeffrey Hilger</small></h1>
+	</div>
 
 <?php
 
