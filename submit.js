@@ -41,7 +41,7 @@ $("#submit_meme").submit(function(event) {
         inputOk = false;
 	}
 
-    if (title.length > 140) {
+    if (title.length > 500) {
         addAlert("Title is too long!");
         inputOk = false;
     }

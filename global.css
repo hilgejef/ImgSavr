@@ -9,6 +9,9 @@ img {
 }
 
 pre {
+	white-space: pre-wrap;
+	word-break: normal;
+	word-wrap: normal;
 	background-color: #FCFCFC;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
@@ -23,12 +26,22 @@ pre {
 }
 
 #title_name h1 a {
-	font-family: Ultra Helvetica sans-serif;
+	font-family: Ultra "Helvetica Neue" Helvetica sans-serif;
 
 }
 
+#formdiv {
+	overflow: hidden;
+	width: 100%;
+}
+
+#alertbox {
+	margin-top: 20px;
+}
+
 .img_div h3 {
-	font-family: Ultra Helvetica sans-serif;
+	margin-top: 0px;
+	font-family: Ultra "Helvetica Neue" Helvetica sans-serif;
 	color: #337AB7;
 	margin-bottom: 5px;
 }
@@ -46,6 +59,7 @@ pre {
 }
 
 .img_div {
+	text-overflow: ellipsis;
 	margin-top: 20px;
 	margin-bottom: 10px;
 	overflow: hidden;
@@ -57,7 +71,7 @@ pre {
 }
 
 .form-container h2 {
-	font-family: Ultra Helvetica sans-serif;
+	font-family: Ultra "Helvetica Neue" Helvetica sans-serif;
 }
 
 .form-container {
@@ -74,11 +88,4 @@ pre {
 	margin-bottom: 0px;
 }
 
-.alertbox {
-	clear: both;
-}
-
-.img_div {
-	clear: both;
-}
 

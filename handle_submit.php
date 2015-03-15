@@ -24,6 +24,8 @@ if (move_uploaded_file($_FILES["meme"]["tmp_name"], $target_file)) {
 		$stmt->execute();
 		$stmt->close();
 	}
+
+	chmod($target_file, 644);
 }
 
 else {

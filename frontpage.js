@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 $.get("view_all.php", function(data) {
-	json = $.parseJSON(data);
+	json = $.parseJSON(data).reverse();
 
 	json.map(function (obj) {
 		var img_div = makeImgDiv(obj, obj["save_state"]);
@@ -18,11 +18,12 @@ $(document).on("click", "#viewall", function(event) {
 	$(".results-container").empty();
 
 	$.get("view_all.php", function(data) {
-		json = $.parseJSON(data);
+		json = $.parseJSON(data).reverse();
 
 		json.map(function (obj) {
 			var img_div = makeImgDiv(obj, obj["save_state"]);
 			$(".results-container").append(img_div);
+			$(".results-container").append($("<hr/>").attr("class", "soften"));
 		});
 
 		$("#titlediv").text("Viewing all memes")
@@ -35,11 +36,12 @@ $(document).on("click", "#viewsaved", function(event) {
 	$(".results-container").empty()
 
 	$.get("view_saved.php", function(data) {
-		json = $.parseJSON(data);
+		json = $.parseJSON(data).reverse();
 
 		json.map(function (obj) {
 			var img_div = makeImgDiv(obj, "saved_insave");
 			$(".results-container").append(img_div);
+			$(".results-container").append($("<hr/>").attr("class", "soften"));
 		});
 
 		$("#titlediv").text("Viewing saved memes")
