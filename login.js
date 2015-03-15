@@ -37,9 +37,19 @@ $("#login").submit(function(event) {
 		addAlert("Usernames are alphanumeric characters only!");
 	}
 
+	$.post("handle_login.php", $(this).serialize(), function(data) {
+		if (data === "username_noexist") {
+			addAlert("That username doesn't exist!");
+		}
+		else if (data === "incorrect_password") {
+			addAlert("Incorrect password!");
+		}
+		else {
+			// window.location.href = "frontpage.php";
+		}
+	});
+
 	$("#password").val("");
-
-
 });
 
 function addAlert(message, type) {

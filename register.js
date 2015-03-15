@@ -46,11 +46,7 @@ $("#register").submit(function(event) {
 		addAlert("Passwords didn't match!");
 	}
 
-	$("#password").val("");
-	$("#retype_password").val("");
-
-	$.post("handle_register.php", $("#register").serialize(), function(data) {
-		console.log(data);
+	$.post("handle_register.php", $(this).serialize(), function(data) {
 		if (data === "username_exists") {
 			addAlert("That username already exists!")
 		}
@@ -58,6 +54,9 @@ $("#register").submit(function(event) {
 			window.location.href = "login.php";
 		}
 	});
+
+	$("#password").val("");
+	$("#retype_password").val("");
 });
 
 function addAlert(message, type) {
