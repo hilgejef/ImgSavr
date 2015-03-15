@@ -6,7 +6,7 @@ session_start();
 
 <html>
 <head>
-	<title>Register</title>	
+	<title>Memesavr - Register</title>	
 <?php
 
 include "css_includes.php"

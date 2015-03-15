@@ -72,12 +72,5 @@ $("#register").submit(function(event) {
 	$("#retype_password").val("");
 });
 
-function addAlert(message, type) {
-
-   type = typeof type !== 'undefined' ? type : 'alert-danger';
-
-    $('#alertbox').append(
-        '<div class="alert ' + type + '" role="alert">' + message + '</div>');
-}
 
 });

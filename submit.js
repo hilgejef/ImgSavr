@@ -53,20 +53,23 @@ $("#submit_meme").submit(function(event) {
             url: 'handle_submit.php',
             type: 'POST',
             data: f_data,
+            success: function(data) {
+                if (data == "upload_failre") {
+                    addAlert("Upload failed!");
+                }
+                else {
+                    addAlert("Meme uploaded!", "alert-success");
+                }
+            },
             cache: false,
             contentType: false,
             processData: false
         });
     }
+
+    $("#submit_meme")[0].reset();
 });
 
-function addAlert(message, type) {
-
-   type = typeof type !== 'undefined' ? type : 'alert-danger';
-
-    $('#alertbox').append(
-        '<div class="alert ' + type + '" role="alert">' + message + '</div>');
-}
 
 });
 
@@ -74,3 +77,4 @@ function resetFormElement(e) {
   e.wrap('<form>').closest('form').get(0).reset();
   e.unwrap();
 }
+

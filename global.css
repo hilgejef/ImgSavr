@@ -7,10 +7,10 @@
 	margin: auto;
 }
 
-button {
-	float: right;
-}
-
 .alertbox {
 	clear: both;
+}
+
+img {
+	max-width: 720px;
 }

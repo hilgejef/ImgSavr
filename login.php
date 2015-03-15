@@ -6,7 +6,7 @@ session_start();
 
 <html>
 <head>
-	<title>Login</title>	
+	<title>Memesavr - Login</title>	
 <?php
 
 include "css_includes.php"

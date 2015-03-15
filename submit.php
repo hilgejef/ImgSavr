@@ -6,7 +6,7 @@ session_start();
 
 <html>
 <head>
-	<title>Submit a meme</title>	
+	<title>Memesavr - Submit meme</title>	
 <?php
 
 include "css_includes.php"
