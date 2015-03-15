@@ -20,7 +20,7 @@ include "header.php";
 
 ?>
 
-<div class = "container">
+<div class = "container form-container">
 	
 	<h2>Login</h2>
 	

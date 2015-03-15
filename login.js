@@ -45,7 +45,7 @@ $("#login").submit(function(event) {
 			addAlert("Incorrect password!");
 		}
 		else {
-			// window.location.href = "frontpage.php";
+			window.location.href = "frontpage.php";
 		}
 	});
 
